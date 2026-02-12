@@ -32,8 +32,8 @@ jobs:
 
     - name: Tag image
       run: |
-        docker tag node-cicd-app:latest \
-        976193264242.dkr.ecr.us-east-1.amazonaws.com/node-cicd-repo:latest
+        docker tag node-cicd-app::v1.0.1 \
+        976193264242.dkr.ecr.us-east-1.amazonaws.com/node-cicd-repo::v1.0.1
 
     - name: Push image
       run: |
