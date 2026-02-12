@@ -28,17 +28,17 @@ jobs:
         --password-stdin 976193264242.dkr.ecr.us-east-1.amazonaws.com
 
     - name: Build Docker image
-      run: docker build -t node-cicd-app .
+      run: docker build -t node-cicd-app:v1.0.1
 
     - name: Tag image
       run: |
-        docker tag node-cicd-app::v1.0.1 \
-        976193264242.dkr.ecr.us-east-1.amazonaws.com/node-cicd-repo::v1.0.1
+        docker tag node-cicd-app:v1.0.1 \
+        976193264242.dkr.ecr.us-east-1.amazonaws.com/node-cicd-repo:v1.0.1
 
     - name: Push image
       run: |
         docker push \
-        976193264242.dkr.ecr.us-east-1.amazonaws.com/node-cicd-repo:latest
+        976193264242.dkr.ecr.us-east-1.amazonaws.com/node-cicd-repo:v1.0.1
 
     - name: Force ECS deployment
       run: |
