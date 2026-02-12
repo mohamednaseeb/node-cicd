@@ -28,7 +28,7 @@ jobs:
         --password-stdin 976193264242.dkr.ecr.us-east-1.amazonaws.com
 
     - name: Build Docker image
-      run: docker build -t node-cicd-app:v1.0.1
+      run: docker build -t node-cicd-app:v1.0.1 .
 
     - name: Tag image
       run: |
